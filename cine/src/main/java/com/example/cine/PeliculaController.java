@@ -1,5 +1,7 @@
 package com.example.cine;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PeliculaController {
 
     @GetMapping
-    public String carteleraCompleta() {
-        return "Toda la cartelera completa!";
+    public ResponseEntity<String> carteleraCompleta() {
+        return new ResponseEntity<String>("Todas las peliculas!",HttpStatus.OK);
     }
 }
